@@ -1,0 +1,252 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+    pointer-events: none;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding-right: 10px;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.timer {
+    padding: 10px;
+}
+
+.moves {
+    padding: 5px;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/*
+* Modal Styles
+*/
+
+.modal {
+    font-style: inherit;
+    width: 660px;
+    height: 680px;
+    position: absolute;
+    text-align: center;
+    background: linear-gradient(160deg, #02ccba, #aa7ecd);
+    border-radius: 10px;
+}
+
+.modal-title {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.modal-body li {
+    list-style-type: none;
+    font-size: 1.5em;
+}
+
+.modal .btn{
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    background: transparent;
+    margin-right: 28px;
+    cursor: pointer;
+}
+
+.modal-hide {
+    display: none;
+}
+
+.modal-display {
+    display: block;
+}
+
+@media  screen and (max-width: 725px) {
+    .deck {
+        width: 495px;
+        min-height: 510px;
+        padding: 10px;
+    }
+
+    .deck .card {
+        margin: 10px;
+        height: 93.75px;
+        width: 93.75px
+    }
+
+    .deck .card.show {
+        font-size: 28px;
+    }
+
+    .deck .card.match {
+        font-size: 28px;
+    } 
+    
+    .modal {
+        margin-top: 7px;
+        font-style: inherit;
+        width: 495px;
+        height: 555px;
+        border-radius: 8px;
+    }
+
+    .modal-title {
+        font-size: 1.5em;
+    }
+
+    .modal-body li {
+        font-size: 1em;
+    }
+
+    .modal .btn{
+        font-size: 1em;
+        padding: 8px;
+        margin-right: 28px;
+    }  
+}
+
+@media  screen and (max-width: 525px) {
+    .deck {
+        width: 330px;
+        min-height: 340px;
+    }
+
+    .deck .card {
+        height: 62.5px;
+        width: 62.5px;
+        margin: 0px;
+    }
+
+    .deck .card.show {
+        font-size: 23px;
+    }
+
+    .deck .card.match {
+        font-size: 23px;
+    }
+    
+    .score-panel {
+        width: 310px;
+    }
+
+    .modal {
+        margin-top: 12px;
+        font-style: inherit;
+        width: 330px;
+        height: 390px;
+        border-radius: 5px;
+    }
+
+    .modal-title {
+        font-size: 1.3em;
+    }
+
+    .modal-body li {
+        font-size: 1em;
+    }
+
+    .modal .btn{
+        font-size: 1em;
+        padding: 8px;
+        margin-right: 28px;
+    }
+   
+}
